@@ -1,0 +1,9 @@
+models - Students
+
+
+-----To Create
+
+Students.objects.create(first_name='Neeraj',last_name='Vijayakumar',Adm_number='LM00024',email='nrj@gmail.com')
+
+-----To Read
+
