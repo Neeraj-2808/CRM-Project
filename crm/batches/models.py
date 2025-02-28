@@ -20,6 +20,8 @@ class Batches(BaseClass):
 
     ended_on = models.DateField(null=True,blank=True)
 
+    academic_counselor = models.ForeignKey('academic_counselors.AcademicCounselor',on_delete=models.SET_NULL,null=True)
+
     def __str__(self):
 
         return f'{self.name}'
