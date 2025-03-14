@@ -2,7 +2,23 @@ from django.db import models
 
 from students.models import BaseClass,DistrictChoices
 
+import uuid
+
 # Create your models here.
+
+# class BaseClass(models.Model):
+
+#     uuid = models.SlugField(unique=True,default=uuid.uuid4)
+
+#     active_status = models.BooleanField(default=True)
+
+#     created_at = models.DateTimeField(auto_now_add=True)
+
+#     updated_at = models.DateTimeField(auto_now=True)
+
+#     class Meta:
+
+#         abstract = True
 
 class Trainers(BaseClass):
 
@@ -16,7 +32,7 @@ class Trainers(BaseClass):
 
     photo = models.ImageField(upload_to='trainers')
 
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
 
     contact = models.CharField(max_length=12)
 
@@ -39,6 +55,10 @@ class Trainers(BaseClass):
     # when course dropped and trainer terminated
 
     course = models.ForeignKey('courses.Courses',null=True,on_delete=models.SET_NULL)
+
+    join_date = models.DateField(auto_now_add=True)
+
+    # batch = models.ForeignKey('batches.Batches',null=True,on_delete=models.SET_NULL)
 
     def __str__(self):
 

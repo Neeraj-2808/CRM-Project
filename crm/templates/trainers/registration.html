@@ -114,7 +114,7 @@
           </label>
           <label class="block text-sm mt-4">
             <span class="text-gray-700 dark:text-gray-400">Pincode</span><span class="text-red-600">*</span>
-            {{form.pin_code}}
+            {{form.pincode}}
             <!-- <input name="pincode"
             required
               type="text"
@@ -122,15 +122,23 @@
               placeholder=""
             /> -->
           </label>
-          {%if form.pin_code.errors%}
+          {%if form.pincode.errors%}
           <span class="text-xs text-red-600 dark:text-red-400">
-            {{form.pin_code.errors}}
+            {{form.pincode.errors}}
           </span>
           {%endif%}
+          <label class="block text-sm mt-4">
+            <span class="text-gray-700 dark:text-gray-400">Qualification</span><span class="text-red-600">*</span>
+            {{form.qualification}}
+          </label><label class="block text-sm mt-4">
+            <span class="text-gray-700 dark:text-gray-400">Stream</span><span class="text-red-600">*</span>
+            {{form.stream}}
+          </label>
         </div>
         <h4
             class="mb-4 text-lg font-semibold text-gray-600 dark:text-gray-300 mt-4"
           >
+          
             Course Details
           </h4>
           <div class="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
@@ -147,9 +155,19 @@
                 
               </select> -->
             </label>
-            <label class="block mt-4 text-sm">
+            <label class="block text-sm mt-4">
+              <span class="text-gray-700 dark:text-gray-400">ID Card</span><span class="text-red-600">*</span>
+              {{form.id_card}}
+              <!-- <input name="photo"
+              required
+                type="file"
+                class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                placeholder=""
+              /> -->
+            </label>
+            <!-- <label class="block mt-4 text-sm">
               <span class="text-gray-700 dark:text-gray-400">Batch</span><span class="text-red-600">*</span>
-              {{form.batch}}
+              {{form.batch}} -->
               <!-- <select name="batch" required
                 class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
               >
@@ -168,9 +186,9 @@
                 placeholder=""
               /> -->
             <!-- </label> -->
-            <label class="block mt-4 text-sm">
+            <!-- <label class="block mt-4 text-sm">
                 <span class="text-gray-700 dark:text-gray-400">Trainer</span><span class="text-red-600">*</span>
-                {{form.trainer}}
+                {{form.trainer}} -->
                 <!-- <select name="trainer" required
                   class="block w-full mt-1 text-sm dark:text-gray-300 dark:border-gray-600 dark:bg-gray-700 form-select focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
                 >
@@ -179,16 +197,7 @@
                 {%endfor%}
                   
                 </select> -->
-              </label>
-              <!-- <label class="block mt-4 text-sm">
-                <span class="text-gray-700 dark:text-gray-400">Payment Settlement</span><span class="text-red-600">*</span>
-                {{payment_structure_form.one_time_or_installment}}
-              </label>
-              <label class="block mt-4 text-sm" id="no-of-installments">
-                <span class="text-gray-700 dark:text-gray-400">No of Installments</span><span class="text-red-600">*</span>
-                {{payment_structure_form.no_of_installments}}
-              </label> -->
-
+              <!-- </label> -->
               <div class="flex items-center justify-end">
                 <button type="submit" class="px-5 py-3 my-6 font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
                     Register
@@ -197,24 +206,6 @@
           </div>
     </div>
 </form>
-<!-- <script>
-  function toggleInstallmentsField() {
-    var installmentsField = document.getElementById('no-of-installments');
-    var paymentSelect = document.getElementById('one-time-or-installments');
-    
-    // Check the current value of the dropdown and toggle the field accordingly
-    if (paymentSelect.value === 'Installments') {
-        installmentsField.style.display = 'block';  
-    } else {
-        installmentsField.style.display = 'none';  
-    }
-  }
-  document.getElementById('one-time-or-installments').addEventListener('change', function () {
-    toggleInstallmentsField(); 
-  });
-
-  window.onload = toggleInstallmentsField;
-</script> -->
   </main>
 
 {%endblock%}
