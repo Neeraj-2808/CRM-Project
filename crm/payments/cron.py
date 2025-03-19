@@ -50,3 +50,5 @@ def scheduler_start():
 
     scheduler.add_job(remainder_email,'cron',hour=10,minute=0)
 
+    scheduler.start()
+
