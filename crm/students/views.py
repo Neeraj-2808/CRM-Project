@@ -65,6 +65,7 @@ class DashBoardView(View) :
     def get(self,request,*args,**kwargs):
 
         return render(request,'students/dashboard.html')
+ 
     
 @method_decorator(permission_roles(roles = ['Admin','Sales','Trainer','Academic Counselor','Student']),name='dispatch')   
 class StudentsListView(View) :

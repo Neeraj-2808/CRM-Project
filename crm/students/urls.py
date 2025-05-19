@@ -15,7 +15,6 @@ urlpatterns = [
     path('student-delete/<str:uuid>/',views.StundentDeleteView.as_view(),name='student-delete'),
     path('student-update/<str:uuid>/',views.StudentUpdateView.as_view(),name='student-update'),
     
-
 ]
 # path('trainer-details/<str:uuid>/',trainers.views.TrainerDetailsView.as_view(),name='trainer-details'),
 # path('trainer-delete/<str:uuid>/',trainers.views.TrainerDeleteView.as_view(),name='trainer-delete'),

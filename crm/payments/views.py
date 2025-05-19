@@ -38,8 +38,21 @@ class StudentPaymentView(View) :
 
             return render(request,'errorpages/error-404.html')
         
-
-        data = {'payment':payment}
+        
+        
+        transaction_obj = Transactions.objects.filter(payment=payment,status='Success')
+        
+        order_id = None
+        
+        
+        if transaction_obj.exists():
+            
+            transaction_obj = transaction_obj.first()
+            
+            order_id = transaction_obj.rzp_order_id
+            
+            
+        data = {'payment':payment,'order_id':order_id}
 
         return render(request,'payments/student-payment-details.html',context=data)
     
